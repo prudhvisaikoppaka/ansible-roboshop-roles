@@ -22,7 +22,7 @@
 
 - name: install dependencies
  
-community.general.npm:
+  community.general.npm:
     path: /app
 
 - name: restart {{ component }}

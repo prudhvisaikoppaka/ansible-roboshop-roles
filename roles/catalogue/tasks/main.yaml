@@ -19,7 +19,7 @@
     state: present
 
 - name: check products loaded or not
-  ansible.builtin.command: mongosh --host 172.31.24.57 --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
+  ansible.builtin.command: mongosh --host 172.31.26.33 --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
   register: catalogue_output
 
 - name: print catalogue catalogue_output
@@ -34,3 +34,10 @@
   include_role:
     name: common
     tasks_from: systemd.yaml
+
+- name: app setup
+  tags:
+  - deployment
+  include_role:
+    name: common
+    tasks_from: deployment

@@ -21,9 +21,8 @@
     remote_src: yes
 
 - name: install dependencies
-  tags:
-  - deployment
-  community.general.npm:
+ 
+community.general.npm:
     path: /app
 
 - name: restart {{ component }}
